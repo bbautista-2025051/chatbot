@@ -56,7 +56,7 @@ AI_PROVIDER=gemini
 
 # Credenciales y configuración de Google Gemini API (NUNCA exponer en el frontend)
 GEMINI_API_KEY=TU_API_KEY_DE_GOOGLE_GEMINI_AQUI
-GEMINI_MODEL=gemini-3.8-flash
+GEMINI_MODEL=gemini-3.6-flash
 GEMINI_EMBEDDING_MODEL=text-embedding-004
 GEMINI_TEMPERATURE=0.4
 GEMINI_MAX_TOKENS=700
@@ -64,7 +64,9 @@ GEMINI_TIMEOUT_MS=25000
 ```
 
 > **Nota sobre cómo cambiar el modelo sin modificar el código:**
-> Puedes cambiar `GEMINI_MODEL` en `.env` (por ejemplo a `gemini-3.8-flash`, `gemini-3.6-flash` o `gemini-3.5-flash-lite`) o seleccionarlo directamente desde **Panel Admin → Ajustes e IA → Modelo de Inteligencia Artificial**.
+> Puedes cambiar `GEMINI_MODEL` en `.env` (por ejemplo a `gemini-3.6-flash`, `gemini-3.8-flash` o `gemini-3.5-flash-lite`) o seleccionarlo directamente desde **Panel Admin → Ajustes e IA → Modelo de Inteligencia Artificial**.
+>
+> Si el modelo tarda más de 25 segundos en responder, el chat cambia automáticamente al modelo de respaldo y deja el modelo lento en pausa durante 10 minutos. Algunos modelos recientes (`gemini-3.8-flash`) pueden saturarse y agotar el tiempo de espera según la cuenta y la región.
 
 ### Paso 3: Cargar datos semilla (opcional si `data/` ya existe) e iniciar el servidor
 

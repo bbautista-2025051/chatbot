@@ -16,11 +16,32 @@ const { DEFAULT_MODELS, PROVIDER_LABELS, GEMINI_FALLBACK_MODELS, normalizeModel 
 const { clamp, maskSecret } = require('../lib/util');
 
 const DEFAULT_BASE_URL = 'https://generativelanguage.googleapis.com/v1beta';
-const DEFAULT_TIMEOUT_MS = 45_000;
+// Un chat de atencion al cliente no puede esperar 45 s. Si el modelo no
+// responde en este tiempo, se pasa al modelo de respaldo.
+const DEFAULT_TIMEOUT_MS = 25_000;
 const RETRYABLE_STATUS = new Set([429, 500, 502, 503, 504]);
 
 // Registro en memoria de peticiones activas para evitar duplicados concurrentes.
 const activeRequests = new Map();
+
+// Modelos que fallaron por saturacion o timeout: se evitan durante un tiempo
+// para que el chat no vuelva a esperar al mismo modelo lento en cada mensaje.
+const modelCooldowns = new Map();
+const MODEL_COOLDOWN_MS = 10 * 60 * 1000;
+
+function isModelCoolingDown(model) {
+  const until = modelCooldowns.get(model);
+  if (!until) return false;
+  if (Date.now() >= until) {
+    modelCooldowns.delete(model);
+    return false;
+  }
+  return true;
+}
+
+function markModelCooldown(model) {
+  if (model) modelCooldowns.set(model, Date.now() + MODEL_COOLDOWN_MS);
+}
 
 class GeminiServiceError extends Error {
   constructor(message, options = {}) {
@@ -392,15 +413,22 @@ async function callGemini({ config: rawConfig, messages, system = '', requestKey
 
     const preferred = normalizeModel(
       'gemini',
-      String(config.model || DEFAULT_MODELS.gemini || 'gemini-3.8-flash').replace(/^models\//, '')
+      String(config.model || DEFAULT_MODELS.gemini || 'gemini-3.6-flash').replace(/^models\//, '')
     );
-    const candidateModels = [preferred, ...GEMINI_FALLBACK_MODELS.filter((item) => item !== preferred)];
+    const allModels = [preferred, ...GEMINI_FALLBACK_MODELS.filter((item) => item !== preferred)];
+    // Los modelos en enfriamiento se prueban al final, como ultimo recurso.
+    const healthy = allModels.filter((item) => !isModelCoolingDown(item));
+    const cooling = allModels.filter((item) => isModelCoolingDown(item));
+    const candidateModels = healthy.length ? [...healthy, ...cooling] : allModels;
     let lastError = null;
 
     for (const modelName of candidateModels) {
       try {
         const result = await generateWithModel(modelName);
-        if (result.text) return result;
+        if (result.text) {
+          modelCooldowns.delete(modelName);
+          return result;
+        }
         lastError = new GeminiServiceError(
           'Google Gemini devolvió una respuesta vacía. Verifica el modelo configurado o intenta reformular tu mensaje.',
           { code: 'EMPTY_RESPONSE', status: 502 }
@@ -420,8 +448,12 @@ async function callGemini({ config: rawConfig, messages, system = '', requestKey
           continue;
         }
         lastError = err;
-        // Solo probamos un modelo de respaldo si el fallo es por saturación (503) o límite de cuota (429).
-        if (err.status !== 503 && err.status !== 429) {
+        // Si el modelo esta saturado, sin cuota o tarda demasiado, se prueba el
+        // respaldo. Un timeout tambien cuenta: antes se devolvia el error sin
+        // intentar otro modelo y el chat quedaba sin respuesta.
+        if (err.status === 503 || err.status === 429 || err.status === 504) {
+          markModelCooldown(modelName);
+        } else {
           throw err;
         }
       }

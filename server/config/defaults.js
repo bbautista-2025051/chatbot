@@ -147,7 +147,7 @@ function defaultSettings() {
 const DEFAULT_MODELS = {
   openai: process.env.OPENAI_MODEL || 'gpt-4o-mini',
   anthropic: process.env.ANTHROPIC_MODEL || 'claude-3-5-haiku-latest',
-  gemini: process.env.GEMINI_MODEL || 'gemini-3.8-flash',
+  gemini: process.env.GEMINI_MODEL || 'gemini-3.6-flash',
   compatible: '',
   demo: 'demo'
 };
