@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>Asistente virtual con IA · Colágeno Vital</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230d7a68'/%3E%3Cpath d='M32 13c8 8 13 14 13 21a13 13 0 0 1-26 0c0-7 5-13 13-21z' fill='%23eafff9'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="/assets/embed.css" />
+</head>
+<body class="embed">
+  <div class="chat-shell" id="chat-shell" aria-busy="false">
+    <header class="chat-head">
+      <div class="chat-avatar" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z" />
+          <path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z" />
+        </svg>
+      </div>
+      <div class="chat-head-meta">
+        <div class="chat-title-row">
+          <strong id="assistant-name">Asistente virtual</strong>
+          <span class="ai-pill" id="ai-provider-pill">Gemini AI</span>
+        </div>
+        <span>
+          <span class="status-dot" id="status-dot"></span>
+          <span id="assistant-subtitle">Respondemos en segundos</span>
+        </span>
+      </div>
+      <div class="chat-head-actions">
+        <a class="head-btn standalone-only" href="/" title="Volver al inicio" aria-label="Volver al inicio">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 9.5 12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z" />
+          </svg>
+        </a>
+        <button class="head-btn" id="chat-new" type="button" title="Iniciar una nueva conversación" aria-label="Iniciar una nueva conversación">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="23 4 23 10 17 10" />
+            <polyline points="1 20 1 14 7 14" />
+            <path d="M3.5 9a9 9 0 0 1 14.9-3.4L23 10M1 14l4.6 4.4A9 9 0 0 0 20.5 15" />
+          </svg>
+          <span class="head-btn-label">Nuevo chat</span>
+        </button>
+      </div>
+    </header>
+
+    <div class="chat-messages" id="messages" role="log" aria-live="polite" aria-label="Historial de conversación"></div>
+
+    <div class="quick-row" id="quick-row" aria-label="Sugerencias rápidas"></div>
+
+    <div id="chat-error" class="chat-error hidden" role="alert">
+      <div class="chat-error-main">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z" />
+          <line x1="12" y1="9" x2="12" y2="13" />
+          <line x1="12" y1="17" x2="12.01" y2="17" />
+        </svg>
+        <span id="chat-error-text">Ocurrió un problema de conexión.</span>
+      </div>
+      <div class="chat-error-actions">
+        <button type="button" class="error-retry-btn hidden" id="chat-retry">Reintentar</button>
+        <button type="button" class="error-dismiss-btn" id="chat-error-close" aria-label="Cerrar aviso">✕</button>
+      </div>
+    </div>
+
+    <form class="chat-composer" id="chat-form" novalidate>
+      <div class="composer-input-wrap">
+        <textarea
+          id="chat-input"
+          rows="1"
+          maxlength="2000"
+          placeholder="Escribe tu pregunta... (Enter para enviar)"
+          aria-label="Escribe tu pregunta"
+          required
+        ></textarea>
+        <span class="char-counter hidden" id="char-counter">0/2000</span>
+      </div>
+      <button class="send-btn" id="chat-send" type="submit" aria-label="Enviar mensaje" title="Enviar mensaje (Enter)">
+        <svg class="send-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="22" y1="2" x2="11" y2="13" />
+          <polygon points="22 2 15 22 11 13 2 9 22 2" />
+        </svg>
+        <span class="send-spinner hidden" aria-hidden="true"></span>
+      </button>
+    </form>
+
+    <div class="chat-foot">
+      <span>Asistente con <strong>Google Gemini AI</strong> · Pulsa <kbd>Enter</kbd> para enviar</span>
+    </div>
+  </div>
+
+  <script src="/assets/embed.js" defer></script>
+</body>
+</html>

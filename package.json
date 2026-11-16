@@ -1,0 +1,25 @@
+{
+  "name": "colageno-chatbot",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Asistente virtual con IA para farmacias y negocios de colageno: entrenamiento con documentos, URLs y prompts, mas integracion con WhatsApp, Instagram, Messenger, Telegram y web.",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
+    "seed": "node scripts/seed.js"
+  },
+  "engines": {
+    "node": ">=18.17"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^16.4.7",
+    "exceljs": "^4.4.0",
+    "express": "^4.21.2",
+    "mammoth": "^1.9.0",
+    "multer": "^2.0.2",
+    "pdf-parse": "1.1.1"
+  }
+}

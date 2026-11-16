@@ -1,0 +1,618 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Colágeno Vital Guatemala · Farmacia, bienestar y asesoría con IA</title>
+  <meta name="description" content="Colágeno hidrolizado, vitamina C y ácido hialurónico en Guatemala con asesoría farmacéutica impulsada por Google Gemini AI. Precios en Quetzales (Q), factura FEL y envíos a los 22 departamentos." />
+  <meta name="theme-color" content="#0d7a68" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230d7a68'/%3E%3Cpath d='M32 13c8 8 13 14 13 21a13 13 0 0 1-26 0c0-7 5-13 13-21z' fill='%23eafff9'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="/assets/base.css" />
+  <link rel="stylesheet" href="/assets/landing.css" />
+</head>
+<body class="landing">
+  <header class="land-header">
+    <div class="land-wrap land-nav">
+      <a class="land-brand" href="/">
+        <span class="mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 3c3.5 3.8 6 6.8 6 10a6 6 0 0 1-12 0c0-3.2 2.5-6.2 6-10z" />
+            <path d="M12 21v-5" />
+          </svg>
+        </span>
+        <span>
+          <span id="brand-name">Colágeno Vital Guatemala</span>
+          <small>Farmacia y bienestar · Guatemala</small>
+        </span>
+      </a>
+
+      <nav class="land-links" aria-label="Navegación principal">
+        <a href="#beneficios">Beneficios</a>
+        <a href="#productos">Productos</a>
+        <a href="#asistente-ia">Asistente Gemini IA</a>
+        <a href="#rutina">Cómo tomarlo</a>
+        <a href="#preguntas">Preguntas</a>
+      </nav>
+
+      <div class="land-nav-actions">
+        <a class="btn btn-ghost btn-sm nav-admin-link" href="/admin" title="Acceder al panel de administración">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="3" width="7" height="7" rx="1.5" />
+            <rect x="14" y="3" width="7" height="7" rx="1.5" />
+            <rect x="3" y="14" width="7" height="7" rx="1.5" />
+            <rect x="14" y="14" width="7" height="7" rx="1.5" />
+          </svg>
+          <span>Panel Admin</span>
+        </a>
+        <button class="btn btn-sm" type="button" data-open-chat="Hola, quiero asesoría para elegir mi colágeno">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z" />
+          </svg>
+          <span>Asesoría IA gratis</span>
+        </button>
+        <button
+          class="mobile-menu-btn"
+          id="mobile-menu-btn"
+          type="button"
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+          aria-label="Abrir menú de navegación"
+        >
+          <svg class="menu-icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+          <svg class="menu-icon-close hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-nav hidden" id="mobile-nav" aria-label="Menú móvil">
+      <div class="land-wrap mobile-nav-inner">
+        <a href="#beneficios" class="mobile-nav-link">Beneficios</a>
+        <a href="#productos" class="mobile-nav-link">Catálogo de productos</a>
+        <a href="#asistente-ia" class="mobile-nav-link">Asistente con Gemini AI</a>
+        <a href="#rutina" class="mobile-nav-link">Cómo tomarlo</a>
+        <a href="#preguntas" class="mobile-nav-link">Preguntas frecuentes</a>
+        <div class="mobile-nav-foot">
+          <a class="btn btn-secondary" href="/admin">Ir al Panel Admin</a>
+          <button class="btn" type="button" data-open-chat="Hola, quiero asesoría para elegir mi colágeno">
+            Abrir Asistente IA
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="land-wrap hero-grid">
+        <div>
+          <span class="pill" id="hero-ai-badge">
+            <span class="dot"></span>
+            <span>Asesoría farmacéutica en Guatemala · Impulsada por Google Gemini AI</span>
+          </span>
+          <h1>Colágeno que se siente en tu <em>piel, cabello y articulaciones</em></h1>
+          <p class="hero-lead">
+            Fórmulas con colágeno hidrolizado, vitamina C y ácido hialurónico seleccionadas por nuestro equipo farmacéutico en Guatemala.
+            Cuéntanos qué necesitas y nuestra asesora inteligente Vita te ayudará a elegir la presentación ideal en segundos.
+          </p>
+          <div class="hero-actions">
+            <button class="btn-hero" type="button" data-open-chat="Hola, quiero saber qué colágeno me recomiendan según mi objetivo">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9.6 9.6 0 0 1-3.8-.8L3 21l1.9-4.6a8.4 8.4 0 1 1 16.1-4.9z"/>
+              </svg>
+              Consultar al asistente con IA
+            </button>
+            <a class="btn-hero ghost" href="#productos">Ver catálogo en Quetzales (Q)</a>
+          </div>
+          <div class="trust-row">
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Envíos a los 22 departamentos
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/><polyline points="9 12 11 14 15 10"/></svg>
+              Registro Sanitario y Factura FEL
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 14"/></svg>
+              Atención 24/7 con Gemini AI
+            </span>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-blob" aria-hidden="true"></div>
+          <div class="float-note one">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/></svg>
+            <div><strong>+2,400 clientes en GT</strong><span>nos eligen cada mes</span></div>
+          </div>
+          <div class="hero-card">
+            <div class="bottle">
+              <svg viewBox="0 0 64 110" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="20" y="4" width="24" height="12" rx="3" />
+                <path d="M18 16h28l4 10v70a6 6 0 0 1-6 6H20a6 6 0 0 1-6-6V26z" />
+                <path d="M14 42h36" />
+                <path d="M24 60h16M24 70h11" />
+                <circle cx="32" cy="34" r="4" />
+              </svg>
+            </div>
+            <div class="hero-card-badge">Más vendido en Guatemala</div>
+            <h3>Colágeno Hidrolizado + Vitamina C</h3>
+            <p>Péptidos bioactivos de rápida absorción con vitamina C, ácido hialurónico y zinc. Sabor natural, 30 porciones diarias.</p>
+            <div class="price-line">
+              <span class="price" id="hero-price">Q245.00</span>
+              <small>/ 300 g · 30 porciones · IVA incluido</small>
+            </div>
+            <div class="mini-tags">
+              <span class="mini-tag">Sin azúcar añadida</span>
+              <span class="mini-tag">2.ª unidad con 10% OFF (Q220.50)</span>
+              <span class="mini-tag">Envío gratis desde Q400</span>
+            </div>
+            <div class="hero-card-actions">
+              <button type="button" class="btn btn-sm" data-open-chat="Quiero pedir el Colágeno Hidrolizado + Vitamina C de 300 g (Q245.00)">
+                Preguntar por este producto
+              </button>
+            </div>
+          </div>
+          <div class="float-note two">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21.2l7.8-7.7 1.1-1.1a5.5 5.5 0 0 0-.1-7.8z"/></svg>
+            <div><strong>Pago contra entrega y bancos GT</strong><span>BI · Banrural · BAM · G&amp;T</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="land-section" id="beneficios">
+      <div class="land-wrap">
+        <div class="section-head">
+          <div class="eyebrow">Por qué elegirnos</div>
+          <h2>Bienestar real, con respaldo profesional</h2>
+          <p>No vendemos por vender. Evaluamos tus objetivos y te explicamos con claridad cómo integrar cada suplemento en tu rutina.</p>
+        </div>
+        <div class="benefit-grid">
+          <div class="benefit">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c3.5 3.8 6 6.8 6 10a6 6 0 0 1-12 0c0-3.2 2.5-6.2 6-10z"/><path d="M12 21v-5"/></svg>
+            </div>
+            <h3>Piel más firme e hidratada</h3>
+            <p>Colágeno tipo I y III combinado con vitamina C y ácido hialurónico para apoyar la elasticidad natural de la piel.</p>
+          </div>
+          <div class="benefit">
+            <div class="icon coral">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20c4-2 5-6 5-9a3 3 0 0 1 6 0c0 3 1 7 5 9"/><path d="M4 20h16"/></svg>
+            </div>
+            <h3>Cabello y uñas resistentes</h3>
+            <p>Aporte de aminoácidos esenciales, biotina y zinc que acompañan el crecimiento saludable del cabello y fortalecen las uñas.</p>
+          </div>
+          <div class="benefit">
+            <div class="icon gold">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3v6a6 6 0 0 0 12 0V3"/><path d="M6 21v-6a6 6 0 0 1 12 0v6"/><path d="M6 6h12M6 18h12"/></svg>
+            </div>
+            <h3>Movilidad y articulaciones</h3>
+            <p>Fórmulas con colágeno tipo II y cúrcuma diseñadas para quienes buscan confort articular y recuperación diaria.</p>
+          </div>
+          <div class="benefit">
+            <div class="icon blue">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3>Asesoría híbrida IA + Humano</h3>
+            <p>Nuestro chatbot con Google Gemini AI resuelve dudas al instante y puede derivar tu caso a un farmacéutico del equipo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="land-section" id="productos">
+      <div class="land-wrap">
+        <div class="section-head">
+          <div class="eyebrow">Catálogo especializado en Guatemala</div>
+          <h2>Elige según tu objetivo de bienestar</h2>
+          <p>Precios en Quetzales (Q) con IVA incluido y factura electrónica FEL. Envío gratis a toda Guatemala en compras mayores a Q400.00.</p>
+        </div>
+        <div class="product-grid">
+          <article class="product" data-product-index="0">
+            <div class="visual">
+              <span class="product-tag">Piel y elasticidad</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2h8l1 4v14a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V6z"/><path d="M8 7h8"/><path d="M10 12h4M10 16h3"/></svg>
+            </div>
+            <div class="product-body">
+              <h3 class="prod-title">Colágeno Hidrolizado 300 g</h3>
+              <p class="prod-desc">Péptidos tipo I y III, vitamina C, ácido hialurónico y zinc. Sabor natural, 30 porciones en polvo de fácil disolución.</p>
+              <div class="product-foot">
+                <span class="price"><span class="prod-price">Q245.00</span> <small>Tarro · 300 g</small></span>
+                <button type="button" data-open-chat="Quiero información del Colágeno Hidrolizado 300 g (Q245.00)">Consultar</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product coral" data-product-index="1">
+            <div class="visual">
+              <span class="product-tag">Cabello y uñas</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 2h6l1 5v13a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2V7z"/><path d="M9 7h6"/><path d="M12 11v6M9 14h6"/></svg>
+            </div>
+            <div class="product-body">
+              <h3 class="prod-title">Colágeno Beauty con Hialurónico</h3>
+              <p class="prod-desc">Fórmula premium con biotina, ácido hialurónico, zinc y vitamina E. Pensada para luminosidad de la piel, cabello y uñas.</p>
+              <div class="product-foot">
+                <span class="price"><span class="prod-price">Q295.00</span> <small>Caja · 30 sobres</small></span>
+                <button type="button" data-open-chat="Quiero información del Colágeno Beauty con Hialurónico (Q295.00)">Consultar</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product gold" data-product-index="2">
+            <div class="visual">
+              <span class="product-tag">Articulaciones</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9 9.5c0-1.4 1.3-2.5 3-2.5s3 .9 3 2.2c0 3.6-6 1.8-6 5.1 0 1.3 1.3 2.2 3 2.2s3-1.1 3-2.5"/></svg>
+            </div>
+            <div class="product-body">
+              <h3 class="prod-title">Colágeno Tipo II + Cúrcuma</h3>
+              <p class="prod-desc">Enfocado en movilidad, cartílagos y confort articular. Cápsulas de fácil consumo diario, 60 unidades para 30 días.</p>
+              <div class="product-foot">
+                <span class="price"><span class="prod-price">Q260.00</span> <small>Frasco · 60 cápsulas</small></span>
+                <button type="button" data-open-chat="Quiero información del Colágeno Tipo II con Cúrcuma (Q260.00)">Consultar</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product blue" data-product-index="3">
+            <div class="visual">
+              <span class="product-tag">Listo para tomar</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2h8v4l2 3v11a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V9l2-3z"/><path d="M8 2v4M16 2v4"/><path d="M9 13h6M9 17h4"/></svg>
+            </div>
+            <div class="product-body">
+              <h3 class="prod-title">Colágeno Líquido Beauty Shot</h3>
+              <p class="prod-desc">Bebida concentrada lista para tomar con sabor a frutos rojos. 20 viales bebibles de 25 ml con vitamina C, B6 y zinc.</p>
+              <div class="product-foot">
+                <span class="price"><span class="prod-price">Q275.00</span> <small>Caja · 20 shots</small></span>
+                <button type="button" data-open-chat="Quiero información del Colágeno Líquido Beauty Shot (Q275.00)">Consultar</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="land-section" id="asistente-ia">
+      <div class="land-wrap">
+        <div class="ai-showcase">
+          <div class="ai-showcase-copy">
+            <div class="eyebrow">Inteligencia Artificial aplicada al bienestar</div>
+            <h2>Tu asesora farmacéutica con Google Gemini AI</h2>
+            <p>
+              Nuestro asistente conversacional combina la base de conocimiento verificada de nuestra farmacia con la capacidad de comprensión de <strong>Google Gemini</strong> para ofrecerte respuestas claras, personalizadas y al instante.
+            </p>
+            <div class="ai-features">
+              <div class="ai-feat">
+                <span class="ai-feat-icon">✓</span>
+                <div>
+                  <strong>Recomendación según tus objetivos</strong>
+                  <span>Compara presentaciones para piel, cabello o articulaciones.</span>
+                </div>
+              </div>
+              <div class="ai-feat">
+                <span class="ai-feat-icon">✓</span>
+                <div>
+                  <strong>Modo de uso y precauciones</strong>
+                  <span>Conoce horarios sugeridos, disolución y cuidados generales.</span>
+                </div>
+              </div>
+              <div class="ai-feat">
+                <span class="ai-feat-icon">✓</span>
+                <div>
+                  <strong>Pedidos, envíos y paso a humano</strong>
+                  <span>Consulta tiempos de entrega o solicita hablar con un asesor.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ai-showcase-interactive">
+            <div class="ai-prompt-box">
+              <div class="ai-prompt-head">
+                <span class="ai-sparkle" aria-hidden="true">✦</span>
+                <div>
+                  <strong>Prueba una consulta rápida</strong>
+                  <span>Haz clic en una pregunta o escribe la tuya para abrir el asistente</span>
+                </div>
+              </div>
+              <div class="ai-prompt-grid">
+                <button type="button" class="prompt-card" data-open-chat="¿Cuál es la diferencia entre el Colágeno Hidrolizado de Q245 y el Colágeno Beauty de Q295?">
+                  <span>¿Cuál es la diferencia entre el Colágeno Hidrolizado (Q245) y el Beauty (Q295)?</span>
+                  <small>Comparar presentaciones →</small>
+                </button>
+                <button type="button" class="prompt-card" data-open-chat="Busco un colágeno para dolor o molestia en las articulaciones, ¿cuál me recomiendas?">
+                  <span>Busco un colágeno para cuidar mis articulaciones, ¿cuál me recomiendas?</span>
+                  <small>Recomendación articular →</small>
+                </button>
+                <button type="button" class="prompt-card" data-open-chat="¿Cómo se toma el colágeno hidrolizado y en cuánto tiempo se ven resultados?">
+                  <span>¿Cómo se toma el colágeno y en cuánto tiempo se notan resultados?</span>
+                  <small>Rutina y constancia →</small>
+                </button>
+                <button type="button" class="prompt-card" data-open-chat="¿Cuánto cuesta el envío a departamentos o Ciudad de Guatemala y qué bancos aceptan?">
+                  <span>¿Cuánto cuesta el envío a mi departamento o zona y qué medios de pago aceptan?</span>
+                  <small>Envíos GT, bancos y FEL →</small>
+                </button>
+              </div>
+              <form class="ai-inline-form" id="quick-ask-form">
+                <label class="sr-only" for="quick-ask-input">Escribe tu consulta para el asistente</label>
+                <input
+                  id="quick-ask-input"
+                  class="input"
+                  type="text"
+                  maxlength="300"
+                  placeholder="O escribe aquí tu pregunta (ej. ¿Tienen colágeno sin azúcar?)..."
+                  required
+                />
+                <button type="submit" class="btn">Preguntar a Gemini</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="land-section" id="rutina">
+      <div class="land-wrap split">
+        <div>
+          <div class="eyebrow">Cómo tomarlo</div>
+          <h2 style="font-size: clamp(28px, 3.4vw, 38px); letter-spacing: -0.03em; line-height: 1.12">Una rutina simple que sí puedes sostener</h2>
+          <p class="hero-lead" style="margin-top: 12px; font-size: 15px">
+            La constancia importa más que la cantidad. Te recomendamos integrar el colágeno en un momento fijo del día.
+          </p>
+          <ul class="checklist" style="list-style: none; padding: 0">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Consulta a tu médico si estás embarazada, en lactancia o tomas medicamentos.
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Mantén una alimentación equilibrada y buena hidratación diaria.
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Los resultados se perciben con uso constante (8 a 12 semanas), no de un día para otro.
+            </li>
+          </ul>
+        </div>
+        <div class="routine-card">
+          <div class="routine-step">
+            <span class="routine-num">1</span>
+            <div>
+              <strong>Elige tu presentación</strong>
+              <p>Polvo, cápsulas, líquido o sobres. La asesora virtual te orienta según tu rutina y preferencias.</p>
+            </div>
+          </div>
+          <div class="routine-step">
+            <span class="routine-num">2</span>
+            <div>
+              <strong>Una toma al día</strong>
+              <p>Disuelve una medida en agua o jugo, o toma las cápsulas con el desayuno. Siempre siguiendo la etiqueta.</p>
+            </div>
+          </div>
+          <div class="routine-step">
+            <span class="routine-num">3</span>
+            <div>
+              <strong>Sé constante de 8 a 12 semanas</strong>
+              <p>Los beneficios se valoran de forma progresiva. Asocia la toma a un hábito diario como el desayuno.</p>
+            </div>
+          </div>
+          <div class="routine-step">
+            <span class="routine-num">4</span>
+            <div>
+              <strong>Pregunta cuando quieras</strong>
+              <p>Si tienes dudas o deseas repetir tu pedido, abre el chat flotante. Te atendemos al instante.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="land-section" id="preguntas">
+      <div class="land-wrap">
+        <div class="section-head" style="text-align: center; margin-left: auto; margin-right: auto">
+          <div class="eyebrow">Preguntas frecuentes</div>
+          <h2>Lo que más nos preguntan</h2>
+          <p>Respuestas claras sobre nuestras presentaciones, tiempos de uso y envíos.</p>
+        </div>
+        <div class="faq">
+          <details open>
+            <summary>¿Qué colágeno me conviene según mi objetivo?</summary>
+            <p>Depende de tu necesidad principal. Para piel, cabello y uñas suele recomendarse colágeno hidrolizado tipo I y III con vitamina C o nuestra presentación Beauty con ácido hialurónico y biotina. Para articulaciones, el colágeno tipo II con cúrcuma es la opción indicada.</p>
+          </details>
+          <details>
+            <summary>¿Cuánto tarda en hacer efecto?</summary>
+            <p>La mayoría de las personas valora cambios después de 8 a 12 semanas de uso constante, acompañado de hidratación y una alimentación equilibrada. Recuerda que es un suplemento dietario y no reemplaza un tratamiento médico.</p>
+          </details>
+          <details>
+            <summary>¿Tiene contraindicaciones?</summary>
+            <p>Si estás embarazada, en periodo de lactancia, tienes una condición médica diagnosticada o tomas medicamentos de control, consulta primero con tu médico. Nuestro equipo y asistente brindan orientación informativa.</p>
+          </details>
+          <details>
+            <summary>¿Cómo funcionan los envíos a Guatemala y los medios de pago?</summary>
+            <p>Entregamos en Ciudad de Guatemala y área metropolitana en 1 a 2 días hábiles (Q25.00) y en los 22 departamentos por Cargo Expreso, Forza Delivery o Guatex en 2 a 4 días hábiles (Q35.00). El envío es GRATIS en compras mayores a Q400.00. Aceptamos tarjeta Visa/Mastercard, Visacuotas, transferencia en Banco Industrial (BI), Banrural, BAM y G&amp;T Continental, pago contra entrega y emitimos Factura Electrónica FEL (NIT o CF).</p>
+          </details>
+          <details>
+            <summary>¿Puedo hablar con una persona del equipo?</summary>
+            <p>Por supuesto. El asistente con Gemini AI responde de inmediato las 24 horas y, cuando solicites atención personalizada o un pedido especial, registra tus datos y deriva la conversación a un asesor humano.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="land-section" style="padding-top: 10px">
+      <div class="land-wrap">
+        <div class="cta-band">
+          <div>
+            <h2>¿Listo para recibir tu recomendación personalizada?</h2>
+            <p>Abre el asistente virtual con IA para resolver precios, presentaciones, envíos y dudas en segundos.</p>
+          </div>
+          <button class="btn-hero" type="button" data-open-chat="Hola, necesito ayuda para elegir mi colágeno">
+            Abrir asistente con IA
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="land-footer">
+    <div class="land-wrap">
+      <div class="footer-grid">
+        <div>
+          <a class="land-brand" href="/">
+            <span class="mark">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c3.5 3.8 6 6.8 6 10a6 6 0 0 1-12 0c0-3.2 2.5-6.2 6-10z"/><path d="M12 21v-5"/></svg>
+            </span>
+            <span>Colágeno Vital <small>Farmacia y bienestar</small></span>
+          </a>
+          <p style="margin-top: 14px">Cuidamos tu bienestar con productos originales y asesoría cercana, en línea mediante IA y en nuestra sede física.</p>
+        </div>
+        <div>
+          <h4>Productos</h4>
+          <a href="#productos">Colágeno Hidrolizado 300 g</a>
+          <a href="#productos">Beauty con Hialurónico</a>
+          <a href="#productos">Tipo II + Cúrcuma</a>
+          <a href="#productos">Beauty Shot Líquido</a>
+        </div>
+        <div>
+          <h4>Atención y plataforma</h4>
+          <a href="#preguntas">Preguntas frecuentes</a>
+          <a href="#rutina">Cómo tomar el colágeno</a>
+          <a href="#asistente-ia" data-open-chat="Hola, necesito ayuda con mi pedido">Consultar estado de pedido</a>
+          <a href="/embed.html">Abrir chat en pantalla completa</a>
+          <a href="/admin">Panel de administración</a>
+        </div>
+        <div>
+          <h4>Contacto en Guatemala</h4>
+          <p id="contact-address">Diagonal 6, 12-42 Zona 10, Ciudad de Guatemala</p>
+          <p id="contact-hours">Lunes a sábado · 9:00 a 19:00</p>
+          <p id="contact-phone">+502 2300 0000 · WhatsApp: +502 5500 0000</p>
+          <p id="contact-email">hola@colagenovital.com.gt</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> Colágeno Vital Guatemala · Todos los derechos reservados.</span>
+        <span class="legal">Los suplementos nutricionales no reemplazan una alimentación equilibrada ni un tratamiento médico. Consulta a tu profesional de salud antes de iniciar cualquier suplementación.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const yearEl = document.getElementById('year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+      function openChatWith(message) {
+        const clean = String(message || '').trim();
+        if (window.ColagenoWidget && typeof window.ColagenoWidget.open === 'function') {
+          window.ColagenoWidget.open(clean);
+        } else {
+          const target = '/embed.html' + (clean ? '?prefill=' + encodeURIComponent(clean) : '');
+          window.location.href = target;
+        }
+      }
+
+      document.addEventListener('click', function (event) {
+        const trigger = event.target.closest('[data-open-chat]');
+        if (!trigger) return;
+        event.preventDefault();
+        const message = trigger.getAttribute('data-open-chat') || '';
+        openChatWith(message);
+      });
+
+      const quickForm = document.getElementById('quick-ask-form');
+      const quickInput = document.getElementById('quick-ask-input');
+      if (quickForm && quickInput) {
+        quickForm.addEventListener('submit', function (event) {
+          event.preventDefault();
+          const text = quickInput.value.trim();
+          if (!text) {
+            quickInput.focus();
+            return;
+          }
+          openChatWith(text);
+          quickInput.value = '';
+        });
+      }
+
+      const menuBtn = document.getElementById('mobile-menu-btn');
+      const mobileNav = document.getElementById('mobile-nav');
+      if (menuBtn && mobileNav) {
+        const openIcon = menuBtn.querySelector('.menu-icon-open');
+        const closeIcon = menuBtn.querySelector('.menu-icon-close');
+        function setMenuOpen(open) {
+          const isOpen = Boolean(open);
+          menuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+          mobileNav.classList.toggle('hidden', !isOpen);
+          if (openIcon) openIcon.classList.toggle('hidden', isOpen);
+          if (closeIcon) closeIcon.classList.toggle('hidden', !isOpen);
+        }
+        menuBtn.addEventListener('click', function () {
+          const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+          setMenuOpen(!expanded);
+        });
+        mobileNav.addEventListener('click', function (event) {
+          if (event.target.closest('a, button')) {
+            setMenuOpen(false);
+          }
+        });
+      }
+
+      fetch('/api/public/config', { headers: { Accept: 'application/json' } })
+        .then(function (res) { return res.ok ? res.json() : null; })
+        .then(function (data) {
+          if (!data || !data.business) return;
+          const b = data.business;
+          if (b.name) {
+            const brandEl = document.getElementById('brand-name');
+            if (brandEl) brandEl.textContent = b.name;
+          }
+          if (b.address) {
+            const addrEl = document.getElementById('contact-address');
+            if (addrEl) addrEl.textContent = b.address;
+          }
+          if (b.hours) {
+            const hoursEl = document.getElementById('contact-hours');
+            if (hoursEl) hoursEl.textContent = b.hours;
+          }
+          if (b.phone || b.whatsapp) {
+            const phoneEl = document.getElementById('contact-phone');
+            if (phoneEl) {
+              phoneEl.textContent = [b.phone, b.whatsapp ? 'WhatsApp: ' + b.whatsapp : ''].filter(Boolean).join(' · ');
+            }
+          }
+          if (b.email) {
+            const emailEl = document.getElementById('contact-email');
+            if (emailEl) emailEl.textContent = b.email;
+          }
+          const cur = b.currency || 'Q';
+          if (Array.isArray(b.products) && b.products.length) {
+            const heroPrice = document.getElementById('hero-price');
+            if (heroPrice && b.products[0] && b.products[0].price) {
+              heroPrice.textContent = cur + b.products[0].price;
+            }
+            b.products.forEach(function (prod, idx) {
+              const card = document.querySelector('[data-product-index="' + idx + '"]');
+              if (!card || !prod) return;
+              const titleEl = card.querySelector('.prod-title');
+              const descEl = card.querySelector('.prod-desc');
+              const priceEl = card.querySelector('.prod-price');
+              if (titleEl && prod.name) titleEl.textContent = prod.name;
+              if (descEl && prod.description) descEl.textContent = prod.description;
+              if (priceEl && prod.price) priceEl.textContent = cur + prod.price;
+            });
+          }
+        })
+        .catch(function () {});
+    })();
+  </script>
+  <script src="/widget.js" defer></script>
+</body>
+</html>
